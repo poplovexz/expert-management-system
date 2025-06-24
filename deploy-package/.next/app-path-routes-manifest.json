@@ -1,0 +1,19 @@
+{
+  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
+  "/api/auth/register/route": "/api/auth/register",
+  "/_not-found/page": "/_not-found",
+  "/api/certificates/[id]/route": "/api/certificates/[id]",
+  "/api/certificates/route": "/api/certificates",
+  "/api/experts/[id]/route": "/api/experts/[id]",
+  "/api/experts/import/route": "/api/experts/import",
+  "/api/experts/route": "/api/experts",
+  "/api/upload/route": "/api/upload",
+  "/favicon.ico/route": "/favicon.ico",
+  "/auth/signin/page": "/auth/signin",
+  "/auth/signup/page": "/auth/signup",
+  "/experts/[id]/edit/page": "/experts/[id]/edit",
+  "/experts/[id]/page": "/experts/[id]",
+  "/experts/create/page": "/experts/create",
+  "/experts/import/page": "/experts/import",
+  "/page": "/"
+}

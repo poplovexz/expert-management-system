@@ -1,0 +1,19 @@
+{
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/certificates/[id]/route": "app/api/certificates/[id]/route.js",
+  "/api/certificates/route": "app/api/certificates/route.js",
+  "/api/experts/[id]/route": "app/api/experts/[id]/route.js",
+  "/api/experts/import/route": "app/api/experts/import/route.js",
+  "/api/experts/route": "app/api/experts/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
+  "/experts/[id]/edit/page": "app/experts/[id]/edit/page.js",
+  "/experts/[id]/page": "app/experts/[id]/page.js",
+  "/experts/create/page": "app/experts/create/page.js",
+  "/experts/import/page": "app/experts/import/page.js",
+  "/page": "app/page.js"
+}

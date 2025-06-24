@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  role      String   @default("user") // "user" | "admin"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Expert {
+  id                 Int           @id @default(autoincrement())
+  name               String
+  field              String        // 专业领域，逗号分隔
+  specialty          String        // 专家特长，逗号分隔
+  organization       String?       // 工作单位
+  contact            String?       // 联系方式
+  education          String?       // 学历
+  title              String?       // 职称
+  researchDirection  String?       // 研究方向
+  awards             String?       // 获奖经历
+  achievements       String?       // 代表性成果
+  bio                String?       // 个人简介
+  photoUrl           String?       // 照片URL
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  // 关联证书
+  certificates       Certificate[]
+
+  @@map("experts")
+}
+
+model Certificate {
+  id          Int      @id @default(autoincrement())
+  expertId    Int      // 关联的专家ID
+  name        String   // 证书名称
+  issuer      String?  // 颁发机构
+  issueDate   String?  // 颁发日期
+  expiryDate  String?  // 过期日期
+  fileUrl     String?  // 证书文件URL
+  description String?  // 证书描述
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关联专家
+  expert      Expert   @relation(fields: [expertId], references: [id], onDelete: Cascade)
+
+  @@map("certificates")
+}
