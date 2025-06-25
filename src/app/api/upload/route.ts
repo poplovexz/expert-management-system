@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
     
-    if (!session || (session as any).user?.role !== 'admin') {
+    if (!session || (session as any).user?.role !== 'ADMIN') {
       return NextResponse.json(
         { error: '权限不足' },
         { status: 403 }

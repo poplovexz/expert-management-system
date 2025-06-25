@@ -18,7 +18,7 @@ export function useAuth(requireAuth = true) {
     isLoading: status === 'loading',
     isAuthenticated: status === 'authenticated',
     user: session?.user,
-    isAdmin: (session as any)?.user?.role === 'admin'
+    isAdmin: (session as any)?.user?.role === 'ADMIN'
   }
 }
 

@@ -124,7 +124,7 @@ export default function ExpertDetailPage() {
                   )}
                 </div>
               </div>
-              {(session as any)?.user?.role === 'admin' && (
+              {(session as any)?.user?.role === 'ADMIN' && (
                 <div className="flex space-x-2">
                   <Link
                     href={`/experts/${expert.id}/edit`}

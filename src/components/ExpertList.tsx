@@ -98,7 +98,7 @@ export default function ExpertList({ searchQuery = '' }: Props) {
         <div className="text-gray-500 text-lg mb-4">
           {searchQuery ? '没有找到匹配的专家' : '暂无专家信息'}
         </div>
-        {(session as any)?.user?.role === 'admin' && !searchQuery && (
+        {(session as any)?.user?.role === 'ADMIN' && !searchQuery && (
           <Link
             href="/experts/create"
             className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
@@ -161,7 +161,7 @@ export default function ExpertList({ searchQuery = '' }: Props) {
                       )}
                     </div>
                   </div>
-                  {(session as any)?.user?.role === 'admin' && (
+                  {(session as any)?.user?.role === 'ADMIN' && (
                     <div className="flex space-x-1">
                       <Link
                         href={`/experts/${expert.id}/edit`}

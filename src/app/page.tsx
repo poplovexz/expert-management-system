@@ -36,7 +36,7 @@ export default function Home() {
             <div className="w-full md:w-96">
               <SearchBar onSearch={handleSearch} />
             </div>
-            {(session as any)?.user?.role === 'admin' && (
+            {(session as any)?.user?.role === 'ADMIN' && (
               <div className="flex space-x-4">
                 <Link
                   href="/experts/create"

@@ -34,7 +34,7 @@ export default function Navbar() {
               专家列表
             </Link>
             
-            {(session as any)?.user?.role === 'admin' && (
+            {(session as any)?.user?.role === 'ADMIN' && (
               <>
                 <Link
                   href="/experts/create"
@@ -48,6 +48,12 @@ export default function Navbar() {
                 >
                   批量导入
                 </Link>
+                <Link
+                  href="/users"
+                  className="text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  用户管理
+                </Link>
               </>
             )}
 
@@ -57,7 +63,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <span className="text-gray-700 text-sm">
                   {(session as any).user.email}
-                  {(session as any).user.role === 'admin' && (
+                  {(session as any).user.role === 'ADMIN' && (
                     <span className="ml-1 px-2 py-1 text-xs bg-blue-100 text-blue-800 rounded">
                       管理员
                     </span>
@@ -78,12 +84,7 @@ export default function Navbar() {
                 >
                   登录
                 </Link>
-                <Link
-                  href="/auth/signup"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  注册
-                </Link>
+
               </div>
             )}
           </div>
@@ -113,7 +114,7 @@ export default function Navbar() {
                 专家列表
               </Link>
               
-              {(session as any)?.user?.role === 'admin' && (
+              {(session as any)?.user?.role === 'ADMIN' && (
                 <>
                   <Link
                     href="/experts/create"
@@ -129,6 +130,13 @@ export default function Navbar() {
                   >
                     批量导入
                   </Link>
+                  <Link
+                    href="/users"
+                    className="text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    用户管理
+                  </Link>
                 </>
               )}
 
@@ -136,7 +144,7 @@ export default function Navbar() {
                 <div className="border-t border-gray-200 pt-4">
                   <div className="px-3 py-2">
                     <div className="text-base font-medium text-gray-800">{(session as any).user.email}</div>
-                    {(session as any).user.role === 'admin' && (
+                    {(session as any).user.role === 'ADMIN' && (
                       <div className="text-sm text-blue-600">管理员</div>
                     )}
                   </div>
@@ -159,13 +167,7 @@ export default function Navbar() {
                   >
                     登录
                   </Link>
-                  <Link
-                    href="/auth/signup"
-                    className="bg-indigo-600 hover:bg-indigo-700 text-white block px-3 py-2 rounded-md text-base font-medium"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    注册
-                  </Link>
+
                 </div>
               )}
             </div>

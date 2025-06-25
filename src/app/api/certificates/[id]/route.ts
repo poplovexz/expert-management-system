@@ -62,7 +62,7 @@ export async function PUT(
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session || (session as any).user?.role !== 'admin') {
+    if (!session || (session as any).user?.role !== 'ADMIN') {
       return NextResponse.json(
         { error: '权限不足' },
         { status: 403 }
@@ -115,7 +115,7 @@ export async function DELETE(
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session || (session as any).user?.role !== 'admin') {
+    if (!session || (session as any).user?.role !== 'ADMIN') {
       return NextResponse.json(
         { error: '权限不足' },
         { status: 403 }
